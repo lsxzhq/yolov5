@@ -23,11 +23,10 @@ class Albumentations:
 
             self.transform = A.Compose([
                 A.Blur(p=0.01),
-                A.MedianBlur(p=0.3),
-                A.MotionBlur(p=0.3),
+                A.MedianBlur(p=0.01),
                 A.ToGray(p=0.01),
-                A.CLAHE(p=0.3),
-                A.RandomBrightnessContrast(p=0.3),
+                A.CLAHE(p=0.01),
+                A.RandomBrightnessContrast(p=0.0),
                 A.RandomGamma(p=0.0),
                 A.ImageCompression(quality_lower=75, p=0.0)],
                 bbox_params=A.BboxParams(format='yolo', label_fields=['class_labels']))
